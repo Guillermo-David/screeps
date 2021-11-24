@@ -17,7 +17,8 @@ module.exports = {
 X   Guardar en memoria, para cada habitacion, los recursos droppeados, y hacer que al menos el hauler elija recoger de ahí antes que cualquier otra cosa
     Los harvesters también podrían coger energía de los containers, en lugar de farmear, pero lo malo es que luego upgradean, y sería mucho gasto
     las torretas reparan hasta quedarse sin energía, a pesar de que se supone que han de para al superar el 50% de energia
-    
+    Ticks to live se guarda en la bandera una sola vez al crearla, y si creep.tickstolive < tickBandera -> Creo un bicho
+    Crear tropa!
 */
     
 };

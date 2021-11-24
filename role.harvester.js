@@ -48,10 +48,11 @@ var roleHarvester = {
                 }
             });
 
-            _.sortBy(targets, t => creep.pos.getRangeTo(t));
-
+            targets = _.sortBy(targets, t => creep.pos.getRangeTo(t));
+            
             if(targets.length > 0) {
                 
+                //let target = creep.pos.findClosestByPath(targets);
                 let target = targets[0];
                 
                 if(creep.transfer(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {

@@ -3,10 +3,8 @@ const roleUpgrader = require('role.upgrader');
 const roleBuilder = require('role.builder');
 const roleMiner = require('role.miner');
 const roleHauler = require('role.hauler');
+const roleHealer = require('role.healer');
 const commonTasks = require('common.tasks');
-const roleFlagHarvester = require('role.flagHarvester');
-const roleFlagReserver = require('role.flagReserver');
-const roleFlagBuilder = require('role.flagBuilder');
 
 
 module.exports = {
@@ -81,6 +79,10 @@ module.exports = {
                         case 'hauler':
                             if(Game.time%6 == 0 || (Game.time-1)%6 == 0) thisCreep.say('h');
                             roleHauler.run(thisCreep, roomContainers, otherContainers, minerContainers);
+                            break;
+                        case 'healer':
+                            if(Game.time%6 == 0 || (Game.time-1)%6 == 0) thisCreep.say('heal');
+                            roleHealer.run(thisCreep);
                             break;
                     }
                 }

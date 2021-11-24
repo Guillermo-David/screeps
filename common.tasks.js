@@ -82,7 +82,7 @@ module.exports = {
     getConstructionSite: function(creep){
         
         let constructionSites = [];
-        let constructionSitesIds = thisRoom.memory.constructionSites;
+        let constructionSitesIds = creep.room.memory.constructionSites;
 
         _.forEach(constructionSitesIds, id => {
 
@@ -180,14 +180,14 @@ module.exports = {
             case 'hauler':
             {
                 maxBodyParts = 24;
-                initialBody = [MOVE, CARRY];
+                initialBody = [CARRY, CARRY, MOVE];
                 basicBody = [MOVE, CARRY];
             }break;
             case 'miner':
             {
                 maxBodyParts = 6;
                 initialBody = [];
-                basicBody = [MOVE,WORK];
+                basicBody = [MOVE, WORK];
             }break;
             case 'upgrader':
             {
@@ -199,35 +199,39 @@ module.exports = {
                 initialBody = [MOVE, CARRY, WORK];
                 basicBody = [MOVE, CARRY, WORK];
             }break;
+
+            
+            
+            //FLAG ROLES
             case 'flagHarvester':
             {
                 maxBodyParts = 30;
-                initialBody = [MOVE, CARRY, WORK];
-                basicBody = [MOVE, CARRY, WORK];
+                initialBody = [CARRY, WORK, MOVE];
+                basicBody = [CARRY, WORK, MOVE];
             }break;
             case 'flagReserver':
             {
                 maxBodyParts = 4;
-                initialBody = [MOVE, CLAIM, MOVE, CLAIM];
+                initialBody = [CLAIM, MOVE, CLAIM, MOVE];
                 basicBody = [];
             }break;
             case 'flagBuilder':
             {
                 maxBodyParts = 30;
-                initialBody = [MOVE, CARRY, WORK];
-                basicBody = [MOVE, CARRY, WORK];
+                initialBody = [CARRY, WORK, MOVE];
+                basicBody = [CARRY, WORK, MOVE];
             }break;
             case 'flagDefender':
             {
-                maxBodyParts = 4;
-                initialBody = [];
-                basicBody = [MOVE, RANGED_ATTACK];
+                maxBodyParts = 12;
+                initialBody = [TOUGH, TOUGH, MOVE, MOVE];
+                basicBody = [RANGED_ATTACK, MOVE];
             }break;
             case 'flagClaimer':
             {
                 maxBodyParts = 2;
                 initialBody = [];
-                basicBody = [MOVE, CLAIM];
+                basicBody = [CLAIM, MOVE];
             }break;
         }
         

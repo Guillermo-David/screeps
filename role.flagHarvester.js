@@ -26,7 +26,7 @@ module.exports = {
         
         let creepRoom = creep.memory.myRoom;
         let curRoom = creep.room.name;
-        commonTasks.doWhileMoving(creep);
+        
 
 
 //Miro en qué habitación está
@@ -42,7 +42,7 @@ module.exports = {
                 }
                 
             }else{
-                
+                commonTasks.doWhileMoving(creep);
                 this.unload(creep);
 
             }    
@@ -64,7 +64,7 @@ module.exports = {
                 }
                 
             }else{
-                
+                commonTasks.doWhileMoving(creep);
                 mySpawn = Game.spawns[creep.memory.mySpawn];
                 creep.moveTo(mySpawn, {reusePath: 10, visualizePathStyle: {stroke: '#668cff'}});
                 //this.doWhileMoving(creep);

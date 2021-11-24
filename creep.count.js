@@ -6,7 +6,6 @@ module.exports = {
 
     run:function(thisRoom, minerContainers){
 
-        
         let creepNeeded = false;
         let creepMemory = {};
         let role = '';
@@ -25,11 +24,11 @@ module.exports = {
         let allCreeps = Game.creeps;
 
     //Cuento cuántos creeps de cada tipo hay 
-        let harvesters      = _.filter(allCreeps, (creep) => creep.memory.role == 'harvester'       && creep.memory.myRoom == thisRoom.name);
-        let upgraders       = _.filter(allCreeps, (creep) => creep.memory.role == 'upgrader'        && creep.memory.myRoom == thisRoom.name);
-        let builders        = _.filter(allCreeps, (creep) => creep.memory.role == 'builder'         && creep.memory.myRoom == thisRoom.name);
-        let miners          = _.filter(allCreeps, (creep) => creep.memory.role == 'miner'           && creep.memory.myRoom == thisRoom.name);
-        let haulers         = _.filter(allCreeps, (creep) => creep.memory.role == 'hauler'          && creep.memory.myRoom == thisRoom.name);
+        let harvesters      = _.filter(allCreeps, (creep) => creep.memory.role == 'harvester'       && creep.memory.myRoom == thisRoom.name);// && creep.ticksToLive > 50);
+        let upgraders       = _.filter(allCreeps, (creep) => creep.memory.role == 'upgrader'        && creep.memory.myRoom == thisRoom.name);// && creep.ticksToLive > 50);
+        let builders        = _.filter(allCreeps, (creep) => creep.memory.role == 'builder'         && creep.memory.myRoom == thisRoom.name);// && creep.ticksToLive > 50);
+        let miners          = _.filter(allCreeps, (creep) => creep.memory.role == 'miner'           && creep.memory.myRoom == thisRoom.name);// && creep.ticksToLive > 50);
+        let haulers         = _.filter(allCreeps, (creep) => creep.memory.role == 'hauler'          && creep.memory.myRoom == thisRoom.name);// && creep.ticksToLive > 50);
     /*
         let flagHarvesters  = _.filter(allCreeps, (creep) => creep.memory.role == 'flagHarvester'   && creep.memory.myRoom == thisRoom.name);
         let flagReservers   = _.filter(allCreeps, (creep) => creep.memory.role == 'flagReserver'    && creep.memory.myRoom == thisRoom.name);

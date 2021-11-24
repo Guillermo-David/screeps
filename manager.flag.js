@@ -161,11 +161,11 @@ module.exports = {
 
             let creep = Game.creeps[i];
 
-            if(creep.memory.myFlag == thisFlag.name && creep.memory.role == 'flagHealer'){
+            if(creep.memory.myFlag == thisFlag.name && creep.memory.role == 'flagHealer'){// && creep.ticksToLive > 100){
                 
                 currentHealers++;
 
-            }else if(creep.memory.myFlag == thisFlag.name){
+            }else if(creep.memory.myFlag == thisFlag.name){// && creep.ticksToLive > 100){
             
                 currentMinions++;
             }

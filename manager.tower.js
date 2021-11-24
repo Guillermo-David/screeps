@@ -13,6 +13,8 @@ module.exports = {
         let idsEnemies = tower.room.memory.enemies;
         let toHeal = [];
         
+        //this.drawCircles(tower);
+
         //console.log(tower.id + ": " + tower.store[RESOURCE_ENERGY] +'/'+ tower.energyCapacity);
         if(idsEnemies.length > 0){
             
@@ -36,7 +38,7 @@ module.exports = {
             }
         }else {
             
-            _.forEach(thisRoom.memory.toHeal, name => {
+            _.forEach(tower.room.memory.toHeal, name => {
                 let thisCreep = Game.creeps[name];
                 if(thisCreep){
                     toHeal.push(thisCreep);
@@ -48,5 +50,17 @@ module.exports = {
                 tower.heal(toHeal[0]);
             }
         }
+    },
+
+    drawCircles(tower){
+
+        let repairRangeString = 'range'+tower.id;
+        let repairRange = tower.room.memory[repairRangeString];
+        
+        if(repairRange == null){
+            tower.room.memory[repairRangeString] = 20;
+        }
+
+        var showRange = new RoomVisual(tower.room.name).circle(tower.pos, {radius: repairRange, fill: 'transparent', stroke: 'cyan', lineStyle: 'dotted'});
     }
 };

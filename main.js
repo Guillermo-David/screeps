@@ -3,28 +3,25 @@ const roomManager = require('manager.rooms');
 const roleManager = require('manager.role');
 const flagManager = require('manager.flag');
 const flagRoleManager = require('manager.flagRole');
+const profiler = require('screeps-profiler');
 
-/*
-var commonTasks = require('common.tasks');
-var towerManager = require('manager.tower');
-var spawnManager = require('manager.spawns');
-var creepManager = require('manager.creeps');
-*/
-
+profiler.enable();
 module.exports.loop = function () {
-    
     
     //Limio la memoria de los creeps
     memoryManager.clearMemory();
     
     
     //Gestiono cada room
-    for(var r in Game.rooms) {
-
-        let thisRoom = Game.rooms[r];
-        roomManager.run(thisRoom);
+    profiler.wrap(function() {
         
-    }
+        for(var r in Game.rooms) {
+            
+            let thisRoom = Game.rooms[r];
+            roomManager.run(thisRoom);
+            
+        }
+    });
     
     roleManager.run(Game.creeps);
     flagRoleManager.run(Game.creeps);

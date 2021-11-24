@@ -1,5 +1,6 @@
 const commonTasks = require('common.tasks');
 const roleFlagHarvester = require('role.flagHarvester');
+const roleHarvester = require('role.harvester');
 
 let roomStructures = [];
 let roomContainers = [];
@@ -55,6 +56,8 @@ module.exports = {
 
                 }else{
 
+                    commonTasks.doWhileMoving(creep);
+                    
                     let site = Game.getObjectById(creep.memory.site);
                     if(site == null || !site instanceof ConstructionSite){
                         site = commonTasks.getConstructionSite(creep);
@@ -65,7 +68,7 @@ module.exports = {
                             creep.moveTo(site, {visualizePathStyle: {stroke: '#ffffff'}});
                         }
                     }else{
-                        roleFlagHarvester.run(creep);
+                        roleHarvester.run(creep);
                     }
 
                 }

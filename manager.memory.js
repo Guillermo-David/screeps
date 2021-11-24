@@ -177,15 +177,18 @@ module.exports = {
             
     //Enemies
         
-        enemies = thisRoom.find(FIND_HOSTILE_CREEPS);
-        for(let e in enemies){
-            idsEnemies.push(enemies[e].id);
-        }
-
-        if(idsEnemies.length > 0){
-            thisRoom.memory.enemies = idsEnemies;
-        }else{
-            thisRoom.memory.enemies = [];
+        if(Game.time % 5 == 0){
+            
+            enemies = thisRoom.find(FIND_HOSTILE_CREEPS);
+            for(let e in enemies){
+                idsEnemies.push(enemies[e].id);
+            }
+    
+            if(idsEnemies.length > 0){
+                thisRoom.memory.enemies = idsEnemies;
+            }else{
+                thisRoom.memory.enemies = [];
+            }
         }
 
     //Dropped Resources
