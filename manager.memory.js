@@ -21,6 +21,9 @@ module.exports = {
 
         
         let roomStructuresIds = [];
+
+        let constructionSites = [];
+        let constructionSitesIds = [];
         
         let roomContainers = [];
         let roomContainersIds = [];
@@ -90,6 +93,15 @@ module.exports = {
         }else{
             thisRoom.memory.roomContainers = [];
         }
+
+    //Construction Sites
+        constructionSites = thisRoom.find(FIND_CONSTRUCTION_SITES);
+
+        _.forEach(constructionSites, cs => {            
+            constructionSitesIds.push(cs.id);
+        });
+
+        thisRoom.memory.constructionSites = constructionSitesIds;
 
     //Repair
 

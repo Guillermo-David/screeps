@@ -12,7 +12,7 @@ module.exports = {
         
         
 
-        if(thisRoom.controller){     
+        if(thisRoom.controller && thisRoom.controller.my){     
             
             linkManager.run(thisRoom);
             

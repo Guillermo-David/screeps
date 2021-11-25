@@ -1,12 +1,3 @@
-/*
- * Module code goes here. Use 'module.exports' to export things:
- * module.exports.thing = 'a thing';
- *
- * You can import it from another modules like this:
- * var mod = require('todo');
- * mod.thing == 'a thing'; // true
- */
-
 module.exports = {
 /*
     Si detecto enemigos en una room que no sea mía, pongo una bandera amarilla con nombre 01, 001, 0001 (el primer nombre que esté libre)

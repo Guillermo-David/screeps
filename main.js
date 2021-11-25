@@ -5,6 +5,8 @@ const flagManager = require('manager.flag');
 const flagRoleManager = require('manager.flagRole');
 const profiler = require('screeps-profiler');
 
+//Game.spawns['Spawn3'].spawnCreep([MOVE, HEAL], 'Ambulancia', {memory:{role:'healer'}});  
+
 profiler.enable();
 module.exports.loop = function () {
     

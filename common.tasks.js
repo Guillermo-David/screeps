@@ -223,7 +223,7 @@ module.exports = {
             }break;
             case 'flagDefender':
             {
-                maxBodyParts = 12;
+                maxBodyParts = 6 + thisRoom.controller.level;
                 initialBody = [TOUGH, TOUGH, MOVE, MOVE];
                 basicBody = [RANGED_ATTACK, MOVE];
             }break;
